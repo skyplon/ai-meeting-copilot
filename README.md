@@ -4,7 +4,7 @@
 
 Built as a PM portfolio project to demonstrate **Agentic AI** and **Generative AI** engineering skills.
 
-![Input Screen](https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%201.png?raw=true)
+<img src="https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%201.png?raw=true" width="700"/>
 
 ---
 
@@ -27,36 +27,28 @@ Built as a PM portfolio project to demonstrate **Agentic AI** and **Generative A
 ## Screenshots
 
 ### Agent pipeline — 7 nodes running in sequence
-
-![Processing Pipeline](https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%202.png?raw=true)
+<img src="https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%202.png?raw=true" width="400"/>
 
 ### Results overview — stat cards and follow-up banner
-
-![Results Overview](https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%203.png?raw=true)
+<img src="https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%203.png?raw=true" width="400"/>
 
 ### Summary tab — goal, decisions, and open blockers
-
-![Summary Tab](https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%204.png?raw=true)
+<img src="https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%204.png?raw=true" width="400"/>
 
 ### Action items — routed to Jira, Asana, and Linear automatically
-
-![Action Items](https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%205.png?raw=true)
+<img src="https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%205.png?raw=true" width="400"/>
 
 ### Transcript tab — speaker-labeled turns with timestamps
-
-![Transcript](https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%206.png?raw=true)
+<img src="https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%206.png?raw=true" width="400"/>
 
 ### Email draft — full HTML summary ready to send
-
-![Email Draft](https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%207.png?raw=true)
+<img src="https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%207.png?raw=true" width="400"/>
 
 ### Audio upload — drag and drop .mp3, .m4a, .wav files
-
-![Audio Upload](https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%208.png?raw=true)
+<img src="https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%208.png?raw=true" width="400"/>
 
 ### Audio results — full pipeline output from real audio
-
-![Audio Results](https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%209.png?raw=true)
+<img src="https://github.com/skyplon/ai-meeting-copilot/blob/main/assets/Screenshot%209.png?raw=true" width="400"/>
 
 ---
 
@@ -260,12 +252,6 @@ pytest backend/tests/ -v -m unit
 # Full integration test including real Claude API (~$0.01)
 pytest backend/tests/ -v
 ```
-
----
-
-## Technical Specification
-
-See the full product spec in [`AI_Meeting_Copilot_TechSpec.docx`](./docs/AI_Meeting_Copilot_TechSpec.docx) — agent architecture, data flow diagrams, memory system design, RAG pipeline configuration, and API integration details.
 
 ---
 
