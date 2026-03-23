@@ -1,0 +1,21 @@
+# Secrets — never commit
+backend/.env
+
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Mac
+.DS_Store
+
+# Uploads
+/tmp/
+backend/uploads/
