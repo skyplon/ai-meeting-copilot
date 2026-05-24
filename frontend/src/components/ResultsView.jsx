@@ -1,3 +1,4 @@
+import { API_BASE } from '../config.js'
 import React, { useState } from 'react'
 
 const PRIORITY_META = {
@@ -34,7 +35,7 @@ export default function ResultsView({ result, onReset }) {
 
   const copySlack = async () => {
     try {
-      const res = await fetch(`/api/meetings/${meeting_id}/slack`)
+      const res = await fetch(`${API_BASE}/api/meetings/${meeting_id}/slack`)
       const { markdown } = await res.json()
       await navigator.clipboard.writeText(markdown)
       setCopied(true)
@@ -401,7 +402,7 @@ function EmailTab({ meetingId }) {
   const load = async () => {
     setLoading(true)
     try {
-      const res = await fetch(`/api/meetings/${meetingId}/email`)
+      const res = await fetch(`${API_BASE}/api/meetings/${meetingId}/email`)
       const { html: emailHtml } = await res.json()
       setHtml(emailHtml)
     } catch {

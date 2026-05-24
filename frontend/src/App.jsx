@@ -2,11 +2,10 @@ import React, { useState, useCallback } from 'react'
 import InputPanel from './components/InputPanel.jsx'
 import ProcessingView from './components/ProcessingView.jsx'
 import ResultsView from './components/ResultsView.jsx'
-
-const API = '/api'
+import { API_BASE } from './config.js'
 
 export default function App() {
-  const [view, setView] = useState('input')    // 'input' | 'processing' | 'results'
+  const [view, setView] = useState('input')
   const [result, setResult] = useState(null)
   const [error, setError] = useState(null)
 
@@ -18,15 +17,13 @@ export default function App() {
       let res
 
       if (file) {
-        // Audio upload path
         const form = new FormData()
         form.append('file', file)
         form.append('meeting_title', title)
         form.append('attendees', attendees)
-        res = await fetch(`${API}/meetings/process-audio`, { method: 'POST', body: form })
+        res = await fetch(`${API_BASE}/api/meetings/process-audio`, { method: 'POST', body: form })
       } else {
-        // Text path
-        res = await fetch(`${API}/meetings/process-text`, {
+        res = await fetch(`${API_BASE}/api/meetings/process-text`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -44,7 +41,6 @@ export default function App() {
 
       const data = await res.json()
 
-      // If audio — poll until done
       if (file && data.status === 'queued') {
         const final = await pollUntilDone(data.meeting_id)
         setResult(final)
@@ -62,7 +58,7 @@ export default function App() {
   const pollUntilDone = async (meetingId) => {
     for (let i = 0; i < 60; i++) {
       await new Promise(r => setTimeout(r, 3000))
-      const res = await fetch(`${API}/meetings/${meetingId}`)
+      const res = await fetch(`${API_BASE}/api/meetings/${meetingId}`)
       const data = await res.json()
       if (data.status === 'done') return data
       if (data.status === 'error') throw new Error('Graph processing failed')
@@ -72,7 +68,6 @@ export default function App() {
 
   return (
     <div style={{ minHeight: '100vh' }}>
-      {/* ── Header ── */}
       <header style={{
         background: 'var(--navy)', color: '#fff', padding: '0 32px',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
@@ -95,7 +90,6 @@ export default function App() {
         </div>
       </header>
 
-      {/* ── Main ── */}
       <main style={{ maxWidth: 860, margin: '0 auto', padding: '32px 24px' }}>
         {error && (
           <div style={{
